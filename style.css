@@ -1,0 +1,116 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 1.2em;
+}
+
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li {
+    position: relative;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.nav-links li:hover {
+    background-color: #444;
+}
+
+.submenu {
+    display: none;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: #555;
+    list-style: none;
+}
+
+.nav-links li:hover .submenu {
+    display: block;
+}
+
+.submenu li {
+    padding: 10px;
+    cursor: pointer;
+}
+
+.submenu li:hover {
+    background-color: #666;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    font-size: 1.5em;
+}
+
+header {
+    padding: 40px;
+    text-align: center;
+    background-color: #f4f4f4;
+}
+
+.produtos {
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produto {
+    border: 1px solid #ddd;
+    margin: 10px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.produto:hover {
+    transform: scale(1.05);
+}
+
+.produto img {
+    max-width: 100%;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .nav-links {
+        flex-direction: column;
+        display: none;
+        background-color: #333;
+        width: 100%;
+    }
+    .nav-links.active {
+        display: flex;
+    }
+    .menu-toggle {
+        display: block;
+    }
+    .produtos {
+        flex-direction: column;
+    }
+}
